@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardCornerRadius="15dp"
+    android:padding="16dp"
+    app:cardElevation="@dimen/cardview_compat_inset_shadow"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="6dp"
+        android:background="@color/cardcolor">
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/nameEditTextLayout"-->
+<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--            android:layout_width="184dp"-->
+<!--            android:layout_height="29dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:startIconDrawable="@drawable/person">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/nameEditText"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:ems="10"-->
+<!--                android:inputType="text"-->
+<!--                app:passwordToggleEnabled="true" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="30dp"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:startIconDrawable="@drawable/person" />-->
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/bigshotone"
+                android:text="Nama"
+                android:textColor="@color/textcolor"
+                android:textSize="22dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.039"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:drawableStart="@drawable/person"
+                android:drawableLeft="@drawable/person"
+                android:drawablePadding="12dp"
+                android:fontFamily="@font/poppinsregular"
+                android:hint="Masukkan Nama"
+                android:paddingStart="12dp"
+                android:textColor="@color/textcolor"
+                android:textColorHint="@color/textcolorhint"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/bigshotone"
+            android:text="Telepone"
+            android:textColor="@color/textcolor"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.039"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_telp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingStart="12dp"
+            android:hint="Masukkan No Telepone"
+            android:fontFamily="@font/poppinsregular"
+            android:textSize="16sp"
+            android:textColorHint="@color/textcolorhint"
+            android:textColor="@color/textcolor"
+            android:drawableLeft="@drawable/person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="12dp"
+            />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/bigshotone"
+            android:text="E-Mail"
+            android:textColor="@color/textcolor"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.039"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_telp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingStart="12dp"
+            android:hint="Masukkan Email"
+            android:fontFamily="@font/poppinsregular"
+            android:textSize="16sp"
+            android:textColorHint="@color/textcolorhint"
+            android:textColor="@color/textcolor"
+            android:drawableLeft="@drawable/person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="12dp"
+            />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/bigshotone"
+            android:text="Password"
+            android:textColor="@color/textcolor"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.039"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_email" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_pass"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingStart="12dp"
+            android:hint="Masukkan Password"
+            android:fontFamily="@font/poppinsregular"
+            android:textSize="16sp"
+            android:textColorHint="@color/textcolorhint"
+            android:textColor="@color/textcolor"
+            android:drawableLeft="@drawable/person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="12dp"
+            />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/bigshotone"
+            android:text="Repeat Password"
+            android:textColor="@color/textcolor"
+            android:textSize="22dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.039"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_pass" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edt_rpt_pass"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:paddingStart="12dp"
+            android:hint="Ulangi Password"
+            android:fontFamily="@font/poppinsregular"
+            android:textSize="16sp"
+            android:textColorHint="@color/textcolorhint"
+            android:textColor="@color/textcolor"
+            android:inputType="textPassword"
+            app:passwordToggleEnabled="true"
+            android:drawableLeft="@drawable/person"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="12dp"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>
