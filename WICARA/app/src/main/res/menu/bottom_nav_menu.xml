@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/home_ic"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_user"
+        android:icon="@drawable/user_ic"
+        android:title="@string/tittle_user" />
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/setting_ic"
+        android:title="@string/tittle_setting" />
+
+</menu>
