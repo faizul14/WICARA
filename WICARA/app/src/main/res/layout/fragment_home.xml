@@ -3,20 +3,199 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/bg_color"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view1"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="180dp"
+        app:cardCornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="6dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@drawable/audiowave"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Terjemah Suara"
+                android:textStyle="bold"
+                android:fontFamily="@font/bigshotone"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Mengubah suara menjadi teks dengan sekali tekan"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                />
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view2"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_view1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/card_view1"
+        app:layout_constraintTop_toTopOf="@+id/card_view1">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="6dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@drawable/aterjemahtext"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Terjemah Suara"
+                android:textStyle="bold"
+                android:fontFamily="@font/bigshotone"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Mengubah suara menjadi teks dengan sekali tekan"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view3"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/card_view1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/card_view1"
+        app:layout_constraintTop_toBottomOf="@+id/card_view1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="6dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@drawable/artikel"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Terjemah Suara"
+                android:textStyle="bold"
+                android:fontFamily="@font/bigshotone"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Mengubah suara menjadi teks dengan sekali tekan"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view4"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="32dp"
+        app:cardCornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/card_view2"
+        app:layout_constraintStart_toStartOf="@+id/card_view2"
+        app:layout_constraintTop_toBottomOf="@+id/card_view2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="6dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:src="@drawable/avidio"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Terjemah Suara"
+                android:textStyle="bold"
+                android:fontFamily="@font/bigshotone"
+                android:textColor="@color/black"
+                android:layout_gravity="center"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Mengubah suara menjadi teks dengan sekali tekan"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
