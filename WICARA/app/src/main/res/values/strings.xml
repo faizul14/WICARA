@@ -5,4 +5,12 @@
     <string name="intro_desc1">WICARA menyediakan layanan penerjemah berbagai bahasa nusantara di Indonesia</string>
     <string name="intro_desc3">Klik, agar tetap terhubung dan nikmati manfaatnya!</string>
     <string name="intro_desc2">Saling menjaga kekerabatan dengan belajar bahasa nusantara bersama!</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tittle_user">User</string>
+    <string name="tittle_setting">Setting</string>
 </resources>
