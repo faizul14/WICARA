@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">WICARA</string>
+    <string name="title_wicara">WICARA</string>
+    <string name="text_splashscreen">Preserving Nusantara Languange</string>
+    <string name="intro_desc1">WICARA menyediakan layanan penerjemah berbagai bahasa nusantara di Indonesia</string>
+    <string name="intro_desc3">Klik, agar tetap terhubung dan nikmati manfaatnya!</string>
+    <string name="intro_desc2">Saling menjaga kekerabatan dengan belajar bahasa nusantara bersama!</string>
+</resources>
