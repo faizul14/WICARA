@@ -2,6 +2,7 @@ package com.CapstoneProject.wicara.ui.home
 
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +11,11 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.CapstoneProject.wicara.R
 import com.CapstoneProject.wicara.databinding.FragmentHomeBinding
+import com.CapstoneProject.wicara.ui.TextToTextActivity
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -36,9 +39,8 @@ class HomeFragment : Fragment() {
 //            textView.text = it
 //        }
 
-        binding.cardView1.setOnClickListener {
-            Toast.makeText(requireActivity(), "ini di klik", Toast.LENGTH_SHORT).show()
-        }
+        binding.cardView1.setOnClickListener(this)
+        binding.cardView2.setOnClickListener(this)
         playAnimation()
         return root
     }
@@ -61,11 +63,21 @@ class HomeFragment : Fragment() {
         }
 
     }
-        return root
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onClick(p0: View?) {
+        when(p0?.id){
+            R.id.card_view1 -> {
+                Toast.makeText(requireActivity(), "ini di tekan", Toast.LENGTH_SHORT).show()
+            }
+            R.id.card_view2 -> {
+                val move = Intent(requireActivity(), TextToTextActivity::class.java)
+                startActivity(move)
+            }
+        }
     }
 }
