@@ -1,5 +1,6 @@
 package com.CapstoneProject.wicara.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
@@ -41,6 +42,8 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
 
         binding?.btnCleartext?.setOnClickListener(this)
         binding?.btnTerjemah?.setOnClickListener(this)
+        binding?.txtBahasa1?.setOnClickListener(this)
+        binding?.txtBahasa2?.setOnClickListener(this)
     }
 
     override fun onDestroy() {
@@ -62,6 +65,11 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
                 }else{
                     viewModel.setTextResultEx(text)
                 }
+            }
+            //for still test
+            R.id.txt_bahasa1 -> {
+                val move = Intent(this, ChoseLanguageActivity::class.java)
+                startActivity(move)
             }
         }
     }
