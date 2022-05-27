@@ -10,9 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WICARA">
         <activity
-            android:name=".ui.TextToTextActivity"
+            android:name=".ui.ChoseLanguageActivity"
             android:exported="false" />
-        <!-- <activity -->
+        <activity
+            android:name=".ui.TextToTextActivity"
+            android:exported="false" /> <!-- <activity -->
         <!-- android:name=".MainActivity2" -->
         <!-- android:exported="false" -->
         <!-- android:label="@string/title_activity_main2" /> -->
