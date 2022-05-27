@@ -1,0 +1,35 @@
+GET  http://localhost:5000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZFVzZXIiOjI5LCJuYW1hIjoicmFuZHkyMzU2MSIsImVtYWlsIjoidGVzZW1haWwxMkBnbWFpbC5jb20iLCJpYXQiOjE2NTIzODIxNjcsImV4cCI6MTY1MjM4MjE4N30.GT_hQ4qLLWd9jcIyut1DAFYeQ21ydIAItSaUxC4bt2o
+
+
+
+###
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "nama": "randy23561",
+    "email": "tesemail1234@gmail.com",
+    "password": "1234567",
+    "rePassword": "1234567"
+}
+
+###
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "tesemail123@gmail.com",
+    "password": "1234567"
+}
+
+###
+POST http://localhost:5000/article
+Content-Type: application/json
+
+{
+    "title":"sasasasasa",
+    "image":"sasasasaasa.jpg",
+    "description":"savbhjavshjavfjavfajhvfjhavsfhjasvfhj"
+}
+
