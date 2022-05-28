@@ -1,10 +1,12 @@
 package com.CapstoneProject.wicara.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 import com.CapstoneProject.wicara.R
 import com.CapstoneProject.wicara.databinding.ActivityTextToTextBinding
@@ -13,6 +15,17 @@ import com.CapstoneProject.wicara.viewmodel.TextToTextViewModel
 class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
     private var binding : ActivityTextToTextBinding? = null
     private lateinit var viewModel : TextToTextViewModel
+
+    private val resultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ){ result ->
+        if (result.resultCode == ChoseLanguageActivity.RESULT_CODE && result.data != null){
+            val selectedLanguage = result.data?.getStringExtra(ChoseLanguageActivity.EXTRA_SELECTED_LANGUAGE)
+            val location = result.data?.getStringExtra(ChoseLanguageActivity.LOCATION_RESULT)
+            valueResult(selectedLanguage.toString(), location.toString())
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTextToTextBinding.inflate(layoutInflater)
@@ -41,6 +54,8 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
 
         binding?.btnCleartext?.setOnClickListener(this)
         binding?.btnTerjemah?.setOnClickListener(this)
+        binding?.txtBahasa1?.setOnClickListener(this)
+        binding?.txtBahasa2?.setOnClickListener(this)
     }
 
     override fun onDestroy() {
@@ -63,6 +78,27 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
                     viewModel.setTextResultEx(text)
                 }
             }
+            //for still test
+            R.id.txt_bahasa1 -> {
+                val languagae = binding?.txtBahasa1?.text.toString()
+                move(languagae, "left")
+            }
+            R.id.txt_bahasa2 ->{
+                val language = binding?.txtBahasa2?.text.toString()
+                move(language, "right")
+            }
         }
+    }
+
+    private fun valueResult(data: String, location: String){
+        if (location.equals("left")) binding?.txtBahasa1?.text = data else binding?.txtBahasa2?.text = data
+
+    }
+
+    private fun move(data: String, location: String){
+        val move = Intent(this, ChoseLanguageActivity::class.java)
+        move.putExtra(ChoseLanguageActivity.DATA, data)
+        move.putExtra(ChoseLanguageActivity.LOCATION, location)
+        resultLauncher.launch(move)
     }
 }
