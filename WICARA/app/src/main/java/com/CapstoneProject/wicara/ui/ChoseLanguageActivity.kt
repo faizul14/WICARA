@@ -2,6 +2,7 @@ package com.CapstoneProject.wicara.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.CapstoneProject.wicara.R
@@ -19,10 +20,15 @@ class ChoseLanguageActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding?.root)
 
         viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[ChoseLanguageViewModel::class.java]
+       //fot catch use language from textt to text activity
+        val data = intent.getStringExtra(DATA) as String
+        binding?.txtChoseLanguage?.text = data
+        showAlpha(data)
         viewModel.language.observe(this, {data ->
             binding?.txtChoseLanguage?.text = data
             showAlpha(data)
         })
+
 
         binding?.cdBali?.setOnClickListener(this)
         binding?.cdBatak?.setOnClickListener(this)
@@ -113,5 +119,9 @@ class ChoseLanguageActivity : AppCompatActivity(), View.OnClickListener {
     override fun onDestroy() {
         super.onDestroy()
         binding = null
+    }
+
+    companion object{
+        val DATA = "Data"
     }
 }

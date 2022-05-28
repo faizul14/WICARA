@@ -68,7 +68,9 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
             }
             //for still test
             R.id.txt_bahasa1 -> {
+                val languagae = binding?.txtBahasa1?.text.toString()
                 val move = Intent(this, ChoseLanguageActivity::class.java)
+                move.putExtra(ChoseLanguageActivity.DATA, languagae)
                 startActivity(move)
             }
         }
