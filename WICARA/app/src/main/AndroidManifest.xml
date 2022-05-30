@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WICARA">
         <activity
+            android:name=".ui.VidioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ArtikelActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.ChoseLanguageActivity"
             android:exported="false" />
         <activity

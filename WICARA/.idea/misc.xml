@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/bg_color.xml" value="0.134" />
         <entry key="app/src/main/res/drawable/bg_image_profil.xml" value="0.2865" />
+        <entry key="app/src/main/res/drawable/bg_img.xml" value="0.287" />
         <entry key="app/src/main/res/drawable/bg_input.xml" value="0.134" />
         <entry key="app/src/main/res/drawable/bg_input_white.xml" value="0.1575" />
         <entry key="app/src/main/res/drawable/close_ic.xml" value="0.134" />
@@ -16,12 +17,16 @@
         <entry key="app/src/main/res/drawable/ic_bi_arrow_left_right.xml" value="0.2865" />
         <entry key="app/src/main/res/drawable/next_ic.xml" value="0.1755" />
         <entry key="app/src/main/res/drawable/user_ic.xml" value="0.2865" />
+        <entry key="app/src/main/res/layout/activity_artikel.xml" value="0.3591485507246377" />
         <entry key="app/src/main/res/layout/activity_chose_language.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_guide.xml" value="0.24592391304347827" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.12628865979381443" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.3591485507246377" />
         <entry key="app/src/main/res/layout/activity_text_to_text.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_vidio.xml" value="0.24003623188405798" />
+        <entry key="app/src/main/res/layout/card_artikel.xml" value="0.3591485507246377" />
         <entry key="app/src/main/res/layout/card_datadiri.xml" value="0.3591485507246377" />
+        <entry key="app/src/main/res/layout/card_vidio.xml" value="0.3591485507246377" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21" />
         <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.23958333333333334" />
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.33" />
