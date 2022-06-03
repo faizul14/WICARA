@@ -21,7 +21,13 @@ class TextToTextViewModel : ViewModel() {
         }
         val python = Python.getInstance()
         val pyObject = python.getModule("TranslateTextToText")
-        val hasil =  pyObject.callAttr("translate_bahasa", word.toString(), dataset.toString())
+        var hasil = ""
+        try {
+            hasil =  pyObject.callAttr("translate_bahasa", word.toString().toLowerCase(), dataset.toString()).toString()
+        }catch (e : Exception){
+            Log.d("TRANSLATE", e.toString())
+            hasil = "Dalam penambahan data bahasa !"
+        }
         Log.d("hasil", hasil.toString())
         _resultText.value = hasil.toString()
     }

@@ -76,24 +76,13 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
             }
         })
 
-        if (codeLeft != null){
-            Toast.makeText(this, codeLeft, Toast.LENGTH_SHORT).show()
-        }
-
 
         binding?.btnCleartext?.setOnClickListener(this)
         binding?.btnTerjemah?.setOnClickListener(this)
         binding?.txtBahasa1?.setOnClickListener(this)
         binding?.txtBahasa2?.setOnClickListener(this)
+        binding?.imgReplaceBahasas?.setOnClickListener(this)
 
-//        python("aku ngombe banyu", "Dataset_21")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        if (codeLeft != null){
-            Toast.makeText(this, codeLeft, Toast.LENGTH_SHORT).show()
-        }
     }
 
     private fun python(word: String , dataset: String){
@@ -116,7 +105,7 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
         when(p0?.id){
             R.id.btn_cleartext ->{
                 binding?.edtTranslate?.text?.clear()
-                viewModel.setTextResultEx("Hasil Terrjemahan")
+                viewModel.setTextResultEx("Hasil Translate")
             }
             R.id.btn_terjemah -> {
                 var text = binding?.edtTranslate?.text.toString()
@@ -137,6 +126,9 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
                 val language = binding?.txtBahasa2?.text.toString()
                 move(language, "right")
             }
+            R.id.img_replace_bahasas ->{
+                replaceLocatin()
+            }
         }
     }
 
@@ -155,6 +147,31 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
         move.putExtra(ChoseLanguageActivity.DATA, data)
         move.putExtra(ChoseLanguageActivity.LOCATION, location)
         resultLauncher.launch(move)
+    }
+
+    private fun replaceLocatin(){
+        var helperLanguage = binding?.txtBahasa1?.text.toString()
+        var helperCode = codeLeft
+        var helperText = binding?.edtTranslate?.text
+        val helperHasil = binding?.txtHasilTranslate?.text
+
+        binding?.txtBahasa1?.text = binding?.txtBahasa2?.text.toString()
+        viewModel.generateCode(codeRight, "left")
+        viewModel.codeLeft.observe(this, {
+            codeLeft = it
+        })
+
+        binding?.txtBahasa2?.text = helperLanguage
+        viewModel.generateCode(helperCode, "right")
+        viewModel.codeRight.observe(this, {
+            codeRight = it
+        })
+
+        if (helperText!!.isNotEmpty() && helperHasil != getString(R.string.value)){
+            val data = binding?.txtHasilTranslate?.text.toString()
+            binding?.edtTranslate?.setText(data)
+            binding?.txtHasilTranslate?.text = helperText
+        }
     }
 
     //for hide top bar
