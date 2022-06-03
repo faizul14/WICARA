@@ -13,7 +13,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.CapstoneProject.wicara.R
 import com.CapstoneProject.wicara.databinding.FragmentHomeBinding
+import com.CapstoneProject.wicara.ui.ArtikelActivity
+import com.CapstoneProject.wicara.ui.SpechToTextActivity
 import com.CapstoneProject.wicara.ui.TextToTextActivity
+import com.CapstoneProject.wicara.ui.VidioActivity
 
 class HomeFragment : Fragment(), View.OnClickListener {
 
@@ -41,6 +44,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         binding.cardView1.setOnClickListener(this)
         binding.cardView2.setOnClickListener(this)
+        binding.cardView3.setOnClickListener(this)
+        binding.cardView4.setOnClickListener(this)
         playAnimation()
         return root
     }
@@ -72,12 +77,22 @@ class HomeFragment : Fragment(), View.OnClickListener {
     override fun onClick(p0: View?) {
         when(p0?.id){
             R.id.card_view1 -> {
-                Toast.makeText(requireActivity(), "ini di tekan", Toast.LENGTH_SHORT).show()
+                val move = Intent(requireActivity(), SpechToTextActivity::class.java)
+                startActivity(move)
             }
             R.id.card_view2 -> {
                 val move = Intent(requireActivity(), TextToTextActivity::class.java)
                 startActivity(move)
             }
+            R.id.card_view3 -> {
+                val move = Intent(requireActivity(), ArtikelActivity::class.java)
+                startActivity(move)
+            }
+            R.id.card_view4 -> {
+                val move = Intent(requireActivity(), VidioActivity::class.java)
+                startActivity(move)
+            }
+
         }
     }
 }
