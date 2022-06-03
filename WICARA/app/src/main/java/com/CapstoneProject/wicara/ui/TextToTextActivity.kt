@@ -6,18 +6,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.lifecycle.ViewModelProvider
 import com.CapstoneProject.wicara.R
 import com.CapstoneProject.wicara.databinding.ActivityTextToTextBinding
 import com.CapstoneProject.wicara.viewmodel.TextToTextViewModel
+import com.chaquo.python.Python
+import com.chaquo.python.android.AndroidPlatform
 
 class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
     private var binding : ActivityTextToTextBinding? = null
     private lateinit var viewModel : TextToTextViewModel
+    private  var codeLeft : String = "4"
+    private  var codeRight : String = "1"
 
     private val resultLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -25,7 +31,9 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
         if (result.resultCode == ChoseLanguageActivity.RESULT_CODE && result.data != null){
             val selectedLanguage = result.data?.getStringExtra(ChoseLanguageActivity.EXTRA_SELECTED_LANGUAGE)
             val location = result.data?.getStringExtra(ChoseLanguageActivity.LOCATION_RESULT)
+            val code = result.data?.getStringExtra(ChoseLanguageActivity.CODE_DATASET_RESULT)
             valueResult(selectedLanguage.toString(), location.toString())
+            viewModel.generateCode(code.toString(), location. toString())
         }
     }
 
@@ -56,10 +64,47 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
             binding?.txtHasilTranslate?.text = data
         })
 
+        viewModel.codeLeft.observe(this, {result ->
+            if (result != null){
+                codeLeft = result
+            }
+        })
+
+        viewModel.codeRight.observe(this, {result ->
+            if (result != null){
+                codeRight = result
+            }
+        })
+
+        if (codeLeft != null){
+            Toast.makeText(this, codeLeft, Toast.LENGTH_SHORT).show()
+        }
+
+
         binding?.btnCleartext?.setOnClickListener(this)
         binding?.btnTerjemah?.setOnClickListener(this)
         binding?.txtBahasa1?.setOnClickListener(this)
         binding?.txtBahasa2?.setOnClickListener(this)
+
+//        python("aku ngombe banyu", "Dataset_21")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (codeLeft != null){
+            Toast.makeText(this, codeLeft, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun python(word: String , dataset: String){
+        if (!Python.isStarted()) {
+            Python.start(AndroidPlatform(this))
+        }
+        val python = Python.getInstance()
+        val pyObject = python.getModule("TranslateTextToText")
+        val hasil =  pyObject.callAttr("translate_bahasa", word.toString(), dataset.toString())
+        Log.d("hasil", hasil.toString())
+        Toast.makeText(this, hasil.toString(), Toast.LENGTH_SHORT).show()
     }
 
     override fun onDestroy() {
@@ -79,7 +124,8 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
                 if (text.isEmpty()){
                     binding?.edtTranslate?.error = "isi ini dulu"
                 }else{
-                    viewModel.setTextResultEx(text)
+//                    viewModel.setTextResultEx(text)
+                    viewModel.setTextResultEx2(text, "Dataset_$codeLeft$codeRight", context = this)
                 }
             }
             //for still test
@@ -95,7 +141,12 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun valueResult(data: String, location: String){
-        if (location.equals("left")) binding?.txtBahasa1?.text = data else binding?.txtBahasa2?.text = data
+        if (location.equals("left")) {
+            binding?.txtBahasa1?.text = data
+
+        }else {
+            binding?.txtBahasa2?.text = data
+        }
 
     }
 
