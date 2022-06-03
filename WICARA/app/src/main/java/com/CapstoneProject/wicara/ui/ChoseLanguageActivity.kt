@@ -50,27 +50,27 @@ class ChoseLanguageActivity : AppCompatActivity(), View.OnClickListener {
         when(p0?.id){
             R.id.cd_bali -> {
                 viewModel.setLanguage("Bali")
-                moveResultValue("Bali", location)
+                moveResultValue("Bali", location, "2")
             }
             R.id.cd_batak -> {
                 viewModel.setLanguage("Batak")
-                moveResultValue("Batak", location)
+                moveResultValue("Batak", location, "3")
             }
             R.id.cd_indonesia -> {
                 viewModel.setLanguage("Indonesia")
-                moveResultValue("Indonesia", location)
+                moveResultValue("Indonesia", location, "1")
             }
             R.id.cd_jawa -> {
                 viewModel.setLanguage("Jawa")
-                moveResultValue("Jawa", location)
+                moveResultValue("Jawa", location, "4")
             }
             R.id.cd_melayu -> {
                 viewModel.setLanguage("Melayu")
-                moveResultValue("Melayu", location)
+                moveResultValue("Melayu", location, "7")
             }
             R.id.cd_sunda -> {
                 viewModel.setLanguage("Sunda")
-                moveResultValue("Sunda", location)
+                moveResultValue("Sunda", location, "8")
             }
 
         }
@@ -144,10 +144,11 @@ class ChoseLanguageActivity : AppCompatActivity(), View.OnClickListener {
         supportActionBar?.hide()
     }
 
-    private fun moveResultValue(language : String, location: String){
+    private fun moveResultValue(language : String, location: String, code: String){
         val moveResult = Intent()
         moveResult.putExtra(EXTRA_SELECTED_LANGUAGE, language)
         moveResult.putExtra(LOCATION_RESULT, location)
+        moveResult.putExtra(CODE_DATASET_RESULT, code)
         setResult(RESULT_CODE, moveResult)
         finish()
     }
@@ -162,6 +163,7 @@ class ChoseLanguageActivity : AppCompatActivity(), View.OnClickListener {
         const val DATA = "Data"
         const val LOCATION_RESULT = "location_result"
         const val EXTRA_SELECTED_LANGUAGE = "extra_selected_language"
+        const val CODE_DATASET_RESULT = "code_dataset_result"
         const val RESULT_CODE = 110
     }
 }

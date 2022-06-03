@@ -13,4 +13,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tittle_user">User</string>
     <string name="tittle_setting">Setting</string>
+    <string name="description_ex">Lorem ipsum dolor is amet, Lorem ipsum dolor is amet is a amet lorem ipsum dolor is amet lotrem</string>
 </resources>

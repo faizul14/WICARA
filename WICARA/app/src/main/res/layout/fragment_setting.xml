@@ -65,6 +65,7 @@
                 app:layout_constraintVertical_bias="1.0" />
 
             <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/btn_switch"
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"
                 android:layout_marginEnd="8dp"
