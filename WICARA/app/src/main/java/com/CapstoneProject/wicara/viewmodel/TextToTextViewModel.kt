@@ -5,8 +5,10 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.chaquo.python.Python
 import com.chaquo.python.android.AndroidPlatform
+import kotlinx.coroutines.launch
 
 class TextToTextViewModel : ViewModel() {
     private val _resultText =  MutableLiveData<String>()
@@ -16,20 +18,23 @@ class TextToTextViewModel : ViewModel() {
         _resultText.value = data
     }
     fun setTextResultEx2(word : String, dataset: String, context: Context){
-        if (!Python.isStarted()) {
-            Python.start(AndroidPlatform(context))
+        viewModelScope.launch {
+            if (!Python.isStarted()) {
+                Python.start(AndroidPlatform(context))
+            }
+            val python = Python.getInstance()
+            val pyObject = python.getModule("TranslateTextToText")
+            var hasil = ""
+            try {
+                hasil =  pyObject.callAttr("translate_bahasa", word.toString().toLowerCase(), dataset.toString()).toString()
+            }catch (e : Exception){
+                Log.d("TRANSLATE", e.toString())
+                hasil = "Dalam penambahan data bahasa !"
+            }
+            Log.d("hasil", hasil.toString())
+            _resultText.value = hasil.toString()
         }
-        val python = Python.getInstance()
-        val pyObject = python.getModule("TranslateTextToText")
-        var hasil = ""
-        try {
-            hasil =  pyObject.callAttr("translate_bahasa", word.toString().toLowerCase(), dataset.toString()).toString()
-        }catch (e : Exception){
-            Log.d("TRANSLATE", e.toString())
-            hasil = "Dalam penambahan data bahasa !"
-        }
-        Log.d("hasil", hasil.toString())
-        _resultText.value = hasil.toString()
+
     }
 
     private val _codeLeft = MutableLiveData<String>()
