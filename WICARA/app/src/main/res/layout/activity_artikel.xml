@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ScrollView
+        android:paddingBottom="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none"
@@ -59,6 +60,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_artikel"
                 android:layout_width="match_parent"
+                android:layoutAnimation="@anim/layout_animation"
                 android:layout_height="0dp"
                 android:layout_marginTop="16dp"
                 app:layout_constraintEnd_toEndOf="parent"

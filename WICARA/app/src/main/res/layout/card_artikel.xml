@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     app:cardCornerRadius="15dp"
     android:layout_marginBottom="8dp"
-    android:layout_height="130dp">
+    android:layout_height="130dp"
+    android:id="@+id/item_artikel">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -28,6 +29,7 @@
                 android:layout_height="match_parent">
 
                 <ImageView
+                    android:id="@+id/img_artikel"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitXY"
