@@ -120,11 +120,15 @@ class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
             //for still test
             R.id.txt_bahasa1 -> {
                 val languagae = binding?.txtBahasa1?.text.toString()
-                move(languagae, "left")
+                if (!languagae.equals("Indonesia")){
+                    move(languagae, "left")
+                }
             }
             R.id.txt_bahasa2 ->{
                 val language = binding?.txtBahasa2?.text.toString()
-                move(language, "right")
+                if (!language.equals("Indonesia")){
+                    move(language, "right")
+                }
             }
             R.id.img_replace_bahasas ->{
                 replaceLocatin()
