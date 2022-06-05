@@ -45,6 +45,10 @@ class ArtikelAdapter : RecyclerView.Adapter<ArtikelAdapter.ListViewHolder>() {
             binding.txtTittle.text = data.firstName
             binding.txtDescription.text = data.lastName
 
+            binding.itemArtikel.setOnClickListener {
+                Toast.makeText(itemView.context, "Di klik", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 
@@ -58,7 +62,6 @@ class ArtikelAdapter : RecyclerView.Adapter<ArtikelAdapter.ListViewHolder>() {
 
     override fun onBindViewHolder(holder: ArtikelAdapter.ListViewHolder, position: Int) {
         holder.bind(listArtikel[position])
-//        holder.shopDetailParent
     }
 
     override fun getItemCount(): Int = listArtikel.size

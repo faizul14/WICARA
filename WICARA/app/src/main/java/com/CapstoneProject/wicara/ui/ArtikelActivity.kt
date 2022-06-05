@@ -28,15 +28,15 @@ class ArtikelActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[ArtikelViewModel::class.java]
 //        viewModel.getDataArtikel()
         viewModel.getDataArtikel1()
-        viewModel.dataArtikel1.observe(this, {data->
-            if (data!= null){
-                binding!!.rvArtikel.adapter = adapter
-                adapter.setArtikel(data)
-            }
-        })
+//        viewModel.dataArtikel1.observe(this, {data->
+//            if (data!= null){
+//                binding!!.rvArtikel.adapter = adapter
+//                adapter.setArtikel(data)
+//            }
+//        })
 
 //        setData()
-//        setData1()
+        setData1()
 
     }
 
@@ -51,6 +51,7 @@ class ArtikelActivity : AppCompatActivity() {
     private fun setData1(){
         viewModel.dataArtikel1.observe(this, {data->
             if (data!= null){
+                binding!!.rvArtikel.adapter = adapter
                 adapter.setArtikel(data)
             }
         })
