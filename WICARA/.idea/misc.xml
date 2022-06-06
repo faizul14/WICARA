@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/activity_artikel.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/activity_change_profil.xml" value="0.33" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/activity_chose_language.xml" value="0.19655797101449277" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/activity_detail_artikel1.xml" value="0.19655797101449277" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/activity_main.xml" value="0.17255434782608695" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/activity_main2.xml" value="0.17255434782608695" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/activity_sign_up.xml" value="0.17255434782608695" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/activity_spech_to_text.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/activity_text_to_text.xml" value="0.19655797101449277" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/card_vidio.xml" value="0.17255434782608695" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/fragment_home.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/fragment_setting.xml" value="0.16847826086956522" />
+        <entry key="..\:/Users/Bae/Downloads/CAPSTONE FIX/WICARA/WICARA/app/src/main/res/layout/fragment_user.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/bg_color.xml" value="0.134" />
         <entry key="app/src/main/res/drawable/bg_image_profil.xml" value="0.2865" />
         <entry key="app/src/main/res/drawable/bg_img.xml" value="0.287" />
