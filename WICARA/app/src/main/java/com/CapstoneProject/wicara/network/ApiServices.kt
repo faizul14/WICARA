@@ -5,10 +5,10 @@ import retrofit2.http.GET
 
 interface ApiServices {
     @GET("article")
-    fun getArtikel() : Call<ArtikelResponse>
+    fun getArtikel() : Call<List<ArtikelResponseItem>>
 
     @GET("youtube")
-    fun getVidio() : Call<VidioResponse>
+    fun getVidio() : Call<List<VidioResponseItem>>
 
 
     @GET("users")
