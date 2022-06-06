@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide
 class VidioAdapter : RecyclerView.Adapter<VidioAdapter.ListViewHolder>() {
     private val listVidio = ArrayList<VidioResponseItem>()
     fun seData(data : List<VidioResponseItem>){
+        listVidio.clear()
         listVidio.addAll(data)
     }
     class ListViewHolder(private val binding: CardVidioBinding) : RecyclerView.ViewHolder(binding.root) {

@@ -1,6 +1,7 @@
 package com.CapstoneProject.wicara.ui
 
 import android.animation.Animator
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,40 +15,46 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 
 class ArtikelAdapter : RecyclerView.Adapter<ArtikelAdapter.ListViewHolder>() {
-    private val listArtikel = ArrayList<DataItem>()
-    fun setArtikel(data : List<DataItem>){
+    private val listArtikel = ArrayList<ArtikelResponseItem>()
+    fun setArtikel(data : List<ArtikelResponseItem>){
+        listArtikel.clear()
         listArtikel.addAll(data)
     }
     class ListViewHolder(private val binding: CardArtikelBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind (data : DataItem){
-//            Glide.with(itemView.context)
-//                .load(data.image)
-//                .into(binding.imgArtikel)
-//            binding.txtTittle.text = data.title
-//            binding.txtDescription.text = data.description
-//            binding.itemArtikel.setOnClickListener {
-////                val list =
-//                val list = ArtikelResponseItem(
-//                    data.image,
-//                    "",
-//                    data.description,
-//                    data.id,
-//                    data.title,
-//                    ""
-//                    )
-//            }
-
-
+        fun bind (data : ArtikelResponseItem){
             Glide.with(itemView.context)
-                .load(data.avatar)
+                .load(data.image)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(binding.imgArtikel)
-            binding.txtTittle.text = data.firstName
-            binding.txtDescription.text = data.lastName
-
+            binding.txtTittle.text = data.title
+            binding.txtDescription.text = data.description
             binding.itemArtikel.setOnClickListener {
-                Toast.makeText(itemView.context, "Di klik", Toast.LENGTH_SHORT).show()
+//                val list =
+                val list = ArtikelResponseItem(
+                    data.image,
+                    "",
+                    data.description,
+                    data.id,
+                    data.title,
+                    ""
+                    )
+
+                val move = Intent(itemView.context, DetailArtikel1Activity::class.java)
+                move.putExtra(DetailArtikel1Activity.EXTRA_DATA, list)
+                itemView.context.startActivity(move)
             }
+
+
+//            Glide.with(itemView.context)
+//                .load(data.avatar)
+//                .transition(DrawableTransitionOptions.withCrossFade())
+//                .into(binding.imgArtikel)
+//            binding.txtTittle.text = data.firstName
+//            binding.txtDescription.text = data.lastName
+
+//            binding.itemArtikel.setOnClickListener {
+//                Toast.makeText(itemView.context, "Di klik", Toast.LENGTH_SHORT).show()
+//            }
 
         }
     }

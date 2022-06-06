@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WICARA">
         <activity
+            android:name=".ui.DetailArtikel1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.DetailArticle1Activity"
+            android:exported="false" />
+        <activity
             android:name=".ui.SpechToTextActivity"
             android:exported="false" />
         <activity

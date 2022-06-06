@@ -17,17 +17,17 @@ class VidioViewModel : ViewModel() {
 
     fun getVidio(){
         val client = ApiConfig.getApiServices().getVidio()
-        client.enqueue(object : Callback<VidioResponse>{
-            override fun onResponse(call: Call<VidioResponse>, response: Response<VidioResponse>) {
+        client.enqueue(object : Callback<List<VidioResponseItem>>{
+            override fun onResponse(call: Call<List<VidioResponseItem>>, response: Response<List<VidioResponseItem>>) {
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null){
-                    _dataVidio.value = responseBody.vidioResponse as List<VidioResponseItem>
+                    _dataVidio.value = responseBody as List<VidioResponseItem>
                 }else{
                     Log.e("RESPONSEAPI", response.message())
                 }
             }
 
-            override fun onFailure(call: Call<VidioResponse>, t: Throwable) {
+            override fun onFailure(call: Call<List<VidioResponseItem>>, t: Throwable) {
                 Log.e("RESPONSEAPI", t.message.toString())
             }
 

@@ -16,46 +16,21 @@ class ArtikelViewModel : ViewModel() {
 
     fun getDataArtikel(){
         val client = ApiConfig.getApiServices().getArtikel()
-        client.enqueue(object : Callback<ArtikelResponse>{
+        client.enqueue(object : Callback<List<ArtikelResponseItem>>{
             override fun onResponse(
-                call: Call<ArtikelResponse>,
-                response: Response<ArtikelResponse>
+                call: Call<List<ArtikelResponseItem>>,
+                response: Response<List<ArtikelResponseItem>>
             ) {
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null){
-                    _dataArtikel.value = responseBody.artikelResponse as List<ArtikelResponseItem>
+                    _dataArtikel.value = responseBody as List<ArtikelResponseItem>
                 }else{
-                    Log.e("RESPONSEAPI", response.message())
+                    Log.e("RESPONSEAPI1", response.message())
                 }
             }
 
-            override fun onFailure(call: Call<ArtikelResponse>, t: Throwable) {
-                Log.e("RESPONSEAPI", t.message.toString())
-            }
-
-        })
-    }
-
-    private val _dataArtikel1 = MutableLiveData<List<DataItem>>()
-    val dataArtikel1 : LiveData<List<DataItem>> = _dataArtikel1
-
-    fun getDataArtikel1(){
-        val client = ApiConfig.getApiServices().getArtikelEx()
-        client.enqueue(object : Callback<TestResponse>{
-            override fun onResponse(
-                call: Call<TestResponse>,
-                response: Response<TestResponse>
-            ) {
-                val responseBody = response.body()
-                if (response.isSuccessful && responseBody != null){
-                    _dataArtikel1.value = responseBody.data as List<DataItem>
-                }else{
-                    Log.e("RESPONSEAPI", response.message())
-                }
-            }
-
-            override fun onFailure(call: Call<TestResponse>, t: Throwable) {
-                Log.e("RESPONSEAPI", t.message.toString())
+            override fun onFailure(call: Call<List<ArtikelResponseItem>>, t: Throwable) {
+                Log.e("RESPONSEAPI2", t.message.toString())
             }
 
         })

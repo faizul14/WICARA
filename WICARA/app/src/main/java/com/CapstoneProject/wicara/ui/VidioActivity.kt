@@ -16,6 +16,7 @@ class VidioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityVidioBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+        supportActionBar?.hide()
 
         //for adapter
         adapter = VidioAdapter()
@@ -24,7 +25,7 @@ class VidioActivity : AppCompatActivity() {
 
         //for viewmodel
         viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[VidioViewModel::class.java]
-//        viewModel.getVidio()
+        viewModel.getVidio()
 
         viewModel.dataVidio.observe(this, {data->
             if (data != null){
