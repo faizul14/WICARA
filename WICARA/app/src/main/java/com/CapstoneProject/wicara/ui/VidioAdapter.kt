@@ -1,5 +1,6 @@
 package com.CapstoneProject.wicara.ui
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,7 +18,16 @@ class VidioAdapter : RecyclerView.Adapter<VidioAdapter.ListViewHolder>() {
     class ListViewHolder(private val binding: CardVidioBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data : VidioResponseItem){
             binding.itemVidio.setOnClickListener {
+                val data = VidioResponseItem(
+                    "",
+                    data.linkYoutube,
+                    data.id,
+                    ""
+                )
 
+                val move = Intent(itemView.context, PlayVidioActivity::class.java)
+                move.putExtra(PlayVidioActivity.EXTRA_DATA, data)
+                itemView.context.startActivity(move)
             }
         }
 

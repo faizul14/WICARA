@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WICARA">
         <activity
+            android:name=".ui.PlayVidioActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".ui.DetailArtikel1Activity"
             android:exported="false" />
         <activity
