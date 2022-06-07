@@ -13,10 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.CapstoneProject.wicara.R
 import com.CapstoneProject.wicara.databinding.FragmentHomeBinding
-import com.CapstoneProject.wicara.ui.ArtikelActivity
-import com.CapstoneProject.wicara.ui.SpechToTextActivity
-import com.CapstoneProject.wicara.ui.TextToTextActivity
-import com.CapstoneProject.wicara.ui.VidioActivity
+import com.CapstoneProject.wicara.ui.*
 
 class HomeFragment : Fragment(), View.OnClickListener {
 
@@ -89,7 +86,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 startActivity(move)
             }
             R.id.card_view4 -> {
-                val move = Intent(requireActivity(), VidioActivity::class.java)
+//                val move = Intent(requireActivity(), VidioActivity::class.java)
+                val move = Intent(requireActivity(), PlayVidioActivity::class.java)
                 startActivity(move)
             }
 

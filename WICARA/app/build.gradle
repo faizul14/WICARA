@@ -75,4 +75,8 @@ dependencies {
     implementation 'com.google.android.exoplayer:exoplayer-core:2.16.1'
     implementation 'com.google.android.exoplayer:exoplayer-ui:2.16.1'
 
+    //for extrak youtube
+    implementation 'com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT'
+
+
 }
