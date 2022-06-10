@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WICARA">
         <activity
+            android:name=".ui.ChangeProfilActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.PlayVidioActivity"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.DetailArtikel1Activity"
             android:exported="false" />
