@@ -86,8 +86,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 startActivity(move)
             }
             R.id.card_view4 -> {
-//                val move = Intent(requireActivity(), VidioActivity::class.java)
-                val move = Intent(requireActivity(), PlayVidioActivity::class.java)
+                val move = Intent(requireActivity(), VidioActivity::class.java)
+//                val move = Intent(requireActivity(), PlayVidioActivity::class.java)
                 startActivity(move)
             }
 
