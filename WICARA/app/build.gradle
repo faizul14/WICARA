@@ -78,5 +78,8 @@ dependencies {
     //for extrak youtube
     implementation 'com.github.HaarigerHarald:android-youtubeExtractor:master-SNAPSHOT'
 
+    //for google autentikasi
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
+
 
 }

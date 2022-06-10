@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WICARA">
         <activity
+            android:name=".AutentikasiLoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.ChangeProfilActivity"
             android:exported="false" />
         <activity
