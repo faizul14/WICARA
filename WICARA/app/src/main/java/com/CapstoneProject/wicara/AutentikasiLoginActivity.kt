@@ -26,6 +26,7 @@ class AutentikasiLoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAutentikasiLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         // Configure Google Sign In
         val gso = GoogleSignInOptions
