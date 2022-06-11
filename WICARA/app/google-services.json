@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "612136654312",
+    "project_id": "appwicara",
+    "storage_bucket": "appwicara.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:612136654312:android:2344785c6aaf613860005d",
+        "android_client_info": {
+          "package_name": "com.CapstoneProject.wicara"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "612136654312-blkrkn43s2b62sasp3cb607j7fpteb4p.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.CapstoneProject.wicara",
+            "certificate_hash": "97be08d4cf446d0e466f06776d01d1133162f367"
+          }
+        },
+        {
+          "client_id": "612136654312-cd9qhjps8d05904f3rlrd60u9ls0qn91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDzHWuwEcD4IvoLODSqnHdf9iHGfUEYrcw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "612136654312-cd9qhjps8d05904f3rlrd60u9ls0qn91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
