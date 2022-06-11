@@ -9,17 +9,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
+import com.CapstoneProject.wicara.AutentikasiLoginActivity
 import com.CapstoneProject.wicara.R
 import com.CapstoneProject.wicara.databinding.FragmentSettingBinding
 import com.CapstoneProject.wicara.databinding.FragmentUserBinding
 import com.CapstoneProject.wicara.sharedPreferences.UserModel
 import com.CapstoneProject.wicara.sharedPreferences.UserPreferences
 import com.CapstoneProject.wicara.ui.ChangeProfilActivity
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class UserFragment : Fragment(), View.OnClickListener {
 
     private var _binding : FragmentUserBinding? = null
     private lateinit var mUserPreference: UserPreferences
+    private lateinit var auth: FirebaseAuth
+
 
     private var isPreferenceEmpty = false
     private lateinit var userModel: UserModel
@@ -34,11 +40,16 @@ class UserFragment : Fragment(), View.OnClickListener {
 //        return inflater.inflate(R.layout.fragment_user, container, false)
         _binding = FragmentUserBinding.inflate(inflater, container, false)
         val root : View = binding.root
+
+        //for firebase
+        auth = Firebase.auth
+
         mUserPreference = UserPreferences(requireActivity())
         showExistingPreference()
 
         binding.cdAbout.setOnClickListener(this)
         binding.cd1.setOnClickListener(this)
+        binding.cdLogout.setOnClickListener(this)
 
         return root
     }
@@ -67,7 +78,16 @@ class UserFragment : Fragment(), View.OnClickListener {
             R.id.cd1 -> {
                 move()
             }
+            R.id.cd_logout -> {
+                signOut()
+            }
         }
+    }
+
+    private fun signOut(){
+        auth.signOut()
+        startActivity(Intent(requireActivity(), AutentikasiLoginActivity::class.java))
+        requireActivity().finish()
     }
 
     private fun move(){

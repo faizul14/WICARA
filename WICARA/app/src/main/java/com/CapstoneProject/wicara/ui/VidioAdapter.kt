@@ -17,8 +17,12 @@ class VidioAdapter : RecyclerView.Adapter<VidioAdapter.ListViewHolder>() {
     }
     class ListViewHolder(private val binding: CardVidioBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(data : VidioResponseItem){
+            Glide.with(itemView.context)
+                .load(data.image)
+                .into(binding.imgTumbnail)
             binding.itemVidio.setOnClickListener {
                 val data = VidioResponseItem(
+                    data.image,
                     "",
                     data.linkYoutube,
                     data.id,
