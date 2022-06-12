@@ -182,7 +182,7 @@
         android:alpha="0"
         android:background="@drawable/bg_button"
         android:fontFamily="@font/poppinsregular"
-        android:text="Daftar"
+        android:text="MULAI"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

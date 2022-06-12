@@ -13,11 +13,16 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.CapstoneProject.wicara.R
 import com.CapstoneProject.wicara.databinding.FragmentHomeBinding
+import com.CapstoneProject.wicara.sharedPreferences.UserModel
+import com.CapstoneProject.wicara.sharedPreferences.UserPreferences
+import com.CapstoneProject.wicara.testActivity
 import com.CapstoneProject.wicara.ui.*
 
 class HomeFragment : Fragment(), View.OnClickListener {
 
     private var _binding: FragmentHomeBinding? = null
+    private lateinit var mUserPreference: UserPreferences
+    private lateinit var userModel: UserModel
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -33,6 +38,11 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
+        //for get username
+        mUserPreference = UserPreferences(requireActivity())
+        userModel = mUserPreference.getUser()
+        binding.txtUser.setText(if (userModel.name!!.isEmpty())"User" else userModel.name)
 
 //        val textView: TextView = binding.textHome
 //        homeViewModel.text.observe(viewLifecycleOwner) {
@@ -88,6 +98,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
             R.id.card_view4 -> {
                 val move = Intent(requireActivity(), VidioActivity::class.java)
 //                val move = Intent(requireActivity(), PlayVidioActivity::class.java)
+//                val move = Intent(requireActivity(), testActivity::class.java)
                 startActivity(move)
             }
 

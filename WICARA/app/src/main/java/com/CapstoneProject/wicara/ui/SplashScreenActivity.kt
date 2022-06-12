@@ -7,9 +7,13 @@ import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowManager
 import androidx.lifecycle.lifecycleScope
+import com.CapstoneProject.wicara.AutentikasiLoginActivity
 import com.CapstoneProject.wicara.MainActivity
+import com.CapstoneProject.wicara.MainActivity2
 import com.CapstoneProject.wicara.R
 import com.CapstoneProject.wicara.databinding.ActivitySplashScreenBinding
+import com.CapstoneProject.wicara.sharedPreferences.UserModel
+import com.CapstoneProject.wicara.sharedPreferences.UserPreferences
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -17,12 +21,22 @@ import kotlinx.coroutines.withContext
 
 class SplashScreenActivity : AppCompatActivity() {
     private var binding : ActivitySplashScreenBinding? = null
+    private lateinit var mUserPreference: UserPreferences
+    private lateinit var userModel: UserModel
+    private var session = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         hideSystemUI()
+
+        //for get session
+        mUserPreference = UserPreferences(this)
+        userModel = mUserPreference.getUser()
+
+        session = userModel.sessionGuide
+
         move()
     }
 
@@ -30,9 +44,17 @@ class SplashScreenActivity : AppCompatActivity() {
         lifecycleScope.launch(Dispatchers.Default){
             delay(1500)
             withContext(Dispatchers.Main){
-                val move = Intent(this@SplashScreenActivity, GuideActivity::class.java)
-                startActivity(move)
-                finish()
+                if (session){
+                    val move = Intent(this@SplashScreenActivity, MainActivity2::class.java)
+                    startActivity(move)
+                    finish()
+                }else{
+                    val move = Intent(this@SplashScreenActivity, GuideActivity::class.java)
+                    startActivity(move)
+                    finish()
+                }
+
+
             }
         }
     }

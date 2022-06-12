@@ -30,6 +30,7 @@ class UserFragment : Fragment(), View.OnClickListener {
     private var isPreferenceEmpty = false
     private lateinit var userModel: UserModel
 
+
     private val binding get() = _binding!!
 
     override fun onCreateView(
