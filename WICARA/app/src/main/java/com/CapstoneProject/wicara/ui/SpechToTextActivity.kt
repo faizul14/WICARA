@@ -52,12 +52,13 @@ class SpechToTextActivity : AppCompatActivity() {
                 Toast.makeText(this, "di stop", Toast.LENGTH_SHORT).show()
                 stat = 0
                 mr.stop()
-                viewModel.getTranslate()
+//                viewModel.getTranslate()
+                viewModel.getTerjemahan()
             }
 
         }
 
-        viewModel.getTranslate()
+//        viewModel.getTranslate()
 //        viewModel.getTest()
 
         viewModel.translate.observe(this, {data ->

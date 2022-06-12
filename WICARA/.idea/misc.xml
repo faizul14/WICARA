@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ablogout.xml" value="0.1315" />
         <entry key="app/src/main/res/drawable/bg_color.xml" value="0.134" />
         <entry key="app/src/main/res/drawable/bg_image_profil.xml" value="0.2865" />
         <entry key="app/src/main/res/drawable/bg_img.xml" value="0.287" />

@@ -25,15 +25,19 @@ import java.io.File
 class VIewModelSpechToText : ViewModel() {
 
     var audio = Environment.getExternalStorageDirectory().getAbsolutePath()+ "/Aku.wav"
-    private val _translate = MutableLiveData<TranslateResponse>()
-    val translate : LiveData<TranslateResponse> = _translate
+//    private val _translate = MutableLiveData<TranslateResponse>()
+//    val translate : LiveData<TranslateResponse> = _translate
+//
+    private val _translate = MutableLiveData<String>()
+    val translate : LiveData<String> = _translate
+
+    fun getTerjemahan(){
+        _translate.value = "aku"
+    }
+
 
 
     var file: File = File(audio)
-//    var audioBody: RequestBody = create(MediaType.parse("audio/*"), path)
-//    var audioBody: RequestBody = create(MediaType.parse("audio/*") + path.toString())
-//    var requestBody: Token? = create("audio/mp3*".toMediaTypeOrNull().toString(), audio)
-
     val audioMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
         "file",
         file.name,
@@ -49,7 +53,7 @@ class VIewModelSpechToText : ViewModel() {
             ) {
                 val responseBody = response.body()
                 if (response.isSuccessful && responseBody != null){
-                    _translate.value = responseBody.keyword as TranslateResponse
+//                    _translate.value = responseBody.keyword as TranslateResponse
                 }else{
                     Log.d(TAG, response.message())
                 }
