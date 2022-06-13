@@ -50,7 +50,7 @@
                 android:drawableRight="@drawable/dropdown_ic"
                 android:drawablePadding="2dp"
                 android:fontFamily="@font/bigshotone"
-                android:text="Jawa"
+                android:text="Bali"
                 android:textColor="@color/textcolor"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"

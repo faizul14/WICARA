@@ -22,7 +22,7 @@ import com.chaquo.python.android.AndroidPlatform
 class TextToTextActivity : AppCompatActivity(), View.OnClickListener {
     private var binding : ActivityTextToTextBinding? = null
     private lateinit var viewModel : TextToTextViewModel
-    private  var codeLeft : String = "4"
+    private  var codeLeft : String = "2"
     private  var codeRight : String = "1"
 
     private val resultLauncher = registerForActivityResult(
