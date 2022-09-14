@@ -5,7 +5,7 @@
 
 <!-- ![This is an image](https://github.com/faizul14/belajar-github/blob/main/WICARA.svg) -->
 APP preserving nusantara languages with machine-translation for better tourism in Indonesia. <br>
-Download [APK Versi 1.0-alpha] (https://github.com/faizul14/WICARA/releases/tag/V1.0-alpha)
+Download [APK Versi 1.0-alpha](https://github.com/faizul14/WICARA/releases/tag/V1.0-alpha)
   > Language is the main communication tool to convey expression in social life. Based on data
 from labbineka.kemdikbud.go.id, there are about 718 nusantara languages spread throughout
 Indonesia. However, every fifteen days, one nusantara languages in Indonesia will become 
